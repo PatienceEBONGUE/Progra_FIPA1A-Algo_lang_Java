@@ -1,4 +1,5 @@
-package exercice_1;
+package exercice_1; 
+
 
 public class ErreurDivision extends Exception {
 	String message;
