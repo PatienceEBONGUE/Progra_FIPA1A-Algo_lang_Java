@@ -1,5 +1,6 @@
 package exercice_1;
 
+
 public class Operations {
 	
 	public static String selectOperation(String[] tab){
@@ -10,13 +11,13 @@ public class Operations {
 	}
 	
 	public static void division(double a, double d) throws ErreurDivision{
-		if (d == 0) { throw new ErreurDivision("Erreur !!! Division par zéro non prise en charge"); }
+		if (d == 0) { throw new ErreurDivision("Erreur !!! Division par zÃ©ro non prise en charge"); }
 		System.out.println("division : "+a/d);
 		
 	}
 	
 	public static void racine(double d) throws ErreurRacine{
-		if (d < 0) { throw new ErreurRacine("Erreur !!! Racine de réel négatif non prise en charge");
+		if (d < 0) { throw new ErreurRacine("Erreur !!! Racine de rÃ©el nÃ©gatif non prise en charge");
 		}
 		System.out.println("racine : "+Math.sqrt(d));
 	}
