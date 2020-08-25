@@ -38,3 +38,37 @@ public class Pgcd {
 		  }
 }
 
+// Autre solution réalisée pendant les révisions
+/*
+ * public class Pgcd {
+ * 
+ * public static void main(String[] args) {
+ * System.out.println("Hello World !!!");
+ * System.out.println("------- Exécution de la fonction---------");
+ * myfunction(args); System.out.println("------- Fin d'exécution---------"); }
+ * 
+ * public static void myfunction(String[] args) { if (args.length != 2) {
+ * System.out.println("Veuillez renseignez deux arguments (chiffres)");
+ * System.exit(3); }
+ * 
+ * int p = Integer.parseInt(args[0]); int q = Integer.parseInt(args[1]); int rep
+ * = 0;
+ * 
+ * if (p == 0) { rep = q; System.out.println("pgcd(" + p + "," + q + ") = " +
+ * rep); } else if (q == 0) { rep = p; System.out.println("pgcd(" + p + "," + q
+ * + ") = " + rep); }
+ * 
+ * else { while (p > q || p < q) {
+ * 
+ * if (p > q) { p = p - q; rep = p; } else if (q > p) { q = q - p; rep = q; }
+ * 
+ * }
+ * 
+ * System.out.println("pgcd(" + args[0] + "," + args[1] + ") = " + rep);
+ * 
+ * }
+ * 
+ * }
+ * 
+ * }
+ */

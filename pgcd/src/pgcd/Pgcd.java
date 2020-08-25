@@ -1,7 +1,7 @@
 package pgcd;
 
 public class Pgcd {
-		  public static void main(String[] args){
+		public static void main(String[] args){
 			  
 			if (args.length < 2) {
 				System.out.println("Le nombre d'argument est inférieur à 2");
@@ -13,8 +13,6 @@ public class Pgcd {
 		    }
 		    int p = Integer.parseInt(args[0]);
 		    int q = Integer.parseInt(args[1]);
-		    /*System.out.println(p);*/
-		    /*System.out.println(q);*/
 
 		    boolean w = true;
 
