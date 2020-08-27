@@ -1,63 +1,137 @@
 class HelloWorld {
-    static final int num = 10;
-    static double test = 10.12;
 
     public static void main(String[] args) {
-        char[][] words = { { 'a', 'n', 'i', 'm', 'a', 'l' }, { 'r', 'a', 'd', 'a', 'r' },
-                { 'r', 'e', 's', 'u', 'm', 'a' }, { 'r', 'e', 's', 's', 'a', 's', 's', 'e', 'r' },
-                { 'r', 'e', 'l', 'a', 'c', 'e', 'r' }, { 'k', 'a', 'y', 'a', 'k' },
-                { 'v', 'i', 'v', 'e', ' ', 'J', 'a', 'v', 'a', ' ', '!' } } ;  
-    
+        int[] tab = {4, 7, 3, 9, 1, 2, 5}; 
     
         System.out.println("Hello World !!!");
         System.out.println("------- Exécution de la fonction---------");
-        // printWord(words[0]);
-        // printWords(words);
-        isPalindrome(words[1]);
-        isPalindrome(words[0]);
-        isPalindrome(words[2]);
-        isPalindrome(words[3]);
-        isPalindrome(words[4]);
+        // display(t1);
+        // display(right(t1));
+        // display(merge(1,t1));
+        // display(merge(t1, t2));
+        // display(extract(tab, Integer.parseInt(args[0]), Integer.parseInt(args[1])));
+        display(mergeSort(tab));
         System.out.println("\n------- Fin d'exécution---------");
     }
 
-    static void printWord(char[] word) {
-        for (char num : word) {
-            System.out.print(num);
+    static void display(int[] tab) {
+        for (int num: tab) {
+            System.out.print(num+", ");
         }
-        // System.out.print("\n");
+        System.out.print("\n");
+
     }
 
-    static void printWords(char[][] words) {
-        for (int i=0; i<words.length; i++) {
-                printWord(words[i]);
+    static int[] right(int[] tab) {
+        int [] mytab = new int[tab.length - 1];
+        for (int i=0; i<tab.length-1; i++) {
+            mytab[i] = tab[i+1]; 
         }
-        
+        return mytab;
     }
 
-    static void isPalindrome(char[] word) {
-        
-        char[] myword = new char[word.length];
-        boolean found = true; 
-        for(int i=word.length-1; i>-1; i--) {
-            myword[(word.length-1)-i]+=word[i];
+    static int[] merge(int val, int[] tab) {
+        int[] mytab = new int[tab.length + 1];
+        mytab[0] = val;
+        for (int i = 0; i < tab.length; i++) {
+            mytab[i+1] = tab[i];
         }
-        for (int i = 0; i< word.length; i++) {
-            if (myword[i] != word[i]) {
-                found = false;
+        return mytab;
+    }
+
+    static int[] merge(int[] tab1, int[] tab2) {
+        
+        while (true) {
+            if (tab1.length == 0) {
+                int[] mytab = new int[tab2.length];
+                mytab = tab2;
+                return mytab; 
             }
+            else if (tab2.length == 0) {
+                int[] mytab = new int[tab1.length];
+                mytab = tab1;
+                return mytab;
+            }
+            else if (tab1[0] <= tab2[0]) {
+                int[] mytab = new int[tab1.length + tab2.length];
+                int[] temp = merge(tab1[0], right(tab1));
+                int next = 0;
+                for (int i=0; i< tab1.length; i++) {
+                    mytab[i] = temp[i];
+                    next++;
+                } 
+                for (int i = 0; i < tab2.length; i++) {
+                    mytab[next+i] = tab2[i];
+                }
+
+                return mytab;
+            }
+            else if (tab2[0] <= tab1[0]) {
+                int[] mytab = new int[tab1.length + tab2.length];
+                int[] temp = merge(tab2[0], right(tab2));
+                int next = 0;
+                for (int i = 0; i < tab2.length; i++) {
+                    mytab[i] = temp[i];
+                    next++;
+                }
+                for (int i = 0; i < tab1.length; i++) {
+                    mytab[next + i] = tab1[i];
+                }
+
+                return mytab;
+            }
+            else {
+                int[] mytab = new int[5];
+                return mytab;
+            }
+          
         }
-        // printWord(myword);
-        if (!found) {
-            System.out.print("The word "); 
-            printWord(word);
-            System.out.print(" is not a Palyndrome\n");
+    }    
+
+    static int[] extract(int[] tab, int start, int end){
+        int[] mytab = new int[tab.length];
+        int i = 0;
+        // for (int i=0; i<end-1; i++) {
+        while (start < end) {
+            mytab[i] = tab[start];
+            i++; 
+            start++;    
         }
-        else {
-            System.out.print("The word ");
-            printWord(word);
-            System.out.print(" is a Palyndrome\n");
+        int[] cleantab = new int[start];
+        i=0;
+        while (mytab[i] != 0) {
+            cleantab[i]= mytab[i];
+            i++;
         }
+        return cleantab;
     }
 
+    static int[] mergeSort(int[] tab) {
+        int[] mytab = tab;
+        int[][] cleantab = new int[mytab.length][1]; 
+
+        while (true){
+           
+               if(mytab.length != 1) {
+
+                //    mytab = right(tab);
+                    cleantab[i]  = 
+                    mytab = extract(mytab, 0, mytab.length/2);
+                   System.out.println(mytab[0]);
+
+               }
+               else {
+                    // mytab = merge(mytab,tab);
+                    // cleantab[i] = mytab;
+                    // System.out.println(cleantab);
+                   return mytab;
+               } 
+
+            
+        }
+    
+    }
+        
+
+    
 }

@@ -52,3 +52,87 @@ public class Palindrome {
 
 
 }
+
+// Autre solution réalisée pendant les révisions
+/*	public static void main(String[] args) {
+		char[][] words = { { 'a', 'n', 'i', 'm', 'a', 'l' }, { 'r', 'a', 'd', 'a', 'r' },
+				{ 'r', 'e', 's', 'u', 'm', 'a' }, { 'r', 'e', 's', 's', 'a', 's', 's', 'e', 'r' },
+				{ 'r', 'e', 'l', 'a', 'c', 'e', 'r' }, { 'k', 'a', 'y', 'a', 'k' },
+				{ 'v', 'i', 'v', 'e', ' ', 'J', 'a', 'v', 'a', ' ', '!' } };
+
+		System.out.println("Hello World !!!");
+		System.out.println("------- Exécution de la fonction---------");
+		// printWord(words[0]);
+		// printWords(words);
+		// System.out.println(isPalindrome(words[1]));
+		// System.out.println(isPalindrome(words[0]));
+		// System.out.println(isPalindrome(words[6]));
+		// printPalindromes(words);
+		// reverseWord(words[0]);
+		reverseWords(words);
+		System.out.println("\n------- Fin d'exécution---------");
+	}
+
+	static void printWord(char[] word) {
+		for (char num : word) {
+			System.out.print(num);
+		}
+		// System.out.print("\n");
+	}
+
+	static void printWords(char[][] words) {
+		for (int i = 0; i < words.length; i++) {
+			printWord(words[i]);
+		}
+
+	}
+
+	static boolean isPalindrome(char[] word) {
+
+		char[] myword = new char[word.length];
+		boolean found = true;
+		for (int i = word.length - 1; i > -1; i--) {
+			myword[(word.length - 1) - i] += word[i];
+			if (myword[(word.length - 1) - i] != word[(word.length - 1) - i]) {
+				found = false;
+			}
+		}
+		if (!found) {
+			// System.out.print("The word ");
+			// printWord(word);
+			// System.out.print(" is not a Palyndrome\n");
+			return false;
+		} else {
+			// System.out.print("The word ");
+			// printWord(word);
+			// System.out.print(" is a Palyndrome\n");
+			return true;
+		}
+	}
+
+	static void printPalindromes(char[][] words) {
+		for (int i = 0; i < words.length; i++) {
+			if (isPalindrome(words[i])) {
+				printWord(words[i]);
+				System.out.println("\r");
+			}
+		}
+
+	}
+
+	static void reverseWord(char[] word) {
+		char[] myword = new char[word.length];
+		for (int i = word.length - 1; i > -1; i--) {
+			myword[(word.length - 1) - i] += word[i];
+		}
+		printWord(myword);
+
+	}
+
+	static void reverseWords(char[][] list){
+        for (int i = 0; i < list.length; i++) {
+            reverseWord(list[i]);
+            System.out.println("\r");
+        }
+    }
+*/
